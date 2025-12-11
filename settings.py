@@ -1,5 +1,4 @@
 import globals
-from vars import CREDIT
 import random
 from pyromod import listen
 from pyrogram import Client, filters
@@ -22,10 +21,10 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]
         ])
         await callback_query.message.edit_text(
-    caption,
-    reply_markup=keyboard
-     )
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+            caption,
+            reply_markup=keyboard
+        )
+
     @bot.on_callback_query(filters.regex("thummbnail_command"))
     async def cmd(client, callback_query):
         user_id = callback_query.from_user.id
@@ -36,10 +35,10 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]
         ])
         await callback_query.message.edit_text(
-    caption,
-    reply_markup=keyboard
+            caption,
+            reply_markup=keyboard
         )
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("wattermark_command"))
     async def cmd(client, callback_query):
         user_id = callback_query.from_user.id
@@ -50,10 +49,10 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]
         ])
         await callback_query.message.edit_text(
-    caption,
-    reply_markup=keyboard
+            caption,
+            reply_markup=keyboard
         )
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("set_token_command"))
     async def cmd(client, callback_query):
         user_id = callback_query.from_user.id
@@ -65,10 +64,10 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]
         ])
         await callback_query.message.edit_text(
-    caption,
-    reply_markup=keyboard
+            caption,
+            reply_markup=keyboard
         )
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("caption_style_command"))
     async def handle_caption(client, callback_query):
         user_id = callback_query.from_user.id
@@ -105,7 +104,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Caption Style:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("file_name_command"))
     async def handle_caption(client, callback_query):
         user_id = callback_query.from_user.id
@@ -123,7 +122,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set End File Name:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("viideo_thumbnail_command"))
     async def video_thumbnail(client, callback_query):
         user_id = callback_query.from_user.id
@@ -144,16 +143,16 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set thumbnail:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("pddf_thumbnail_command"))
     async def pdf_thumbnail_button(client, callback_query):
-      keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="thummbnail_command")]])
-      caption = ("<b>⋅ This Feature is Not Working Yet ⋅</b>")
-     await callback_query.message.edit_text(
-    caption,
-    reply_markup=keyboard
-      )
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+        keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="thummbnail_command")]])
+        caption = ("<b>⋅ This Feature is Not Working Yet ⋅</b>")
+        await callback_query.message.edit_text(
+            caption,
+            reply_markup=keyboard
+        )
+
     @bot.on_callback_query(filters.regex("add_credit_command"))
     async def credit(client, callback_query):
         user_id = callback_query.from_user.id
@@ -171,7 +170,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Credit:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("cp_token_command"))
     async def handle_token(client, callback_query):
         user_id = callback_query.from_user.id
@@ -185,7 +184,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Classplus Token:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("pw_token_command"))
     async def handle_token(client, callback_query):
         user_id = callback_query.from_user.id
@@ -199,7 +198,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Physics Wallah Token:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("cw_token_command"))
     async def handle_token(client, callback_query):
         user_id = callback_query.from_user.id
@@ -217,7 +216,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Careerwill Token:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("video_wateermark_command"))
     async def video_watermark(client, callback_query):
         user_id = callback_query.from_user.id
@@ -235,16 +234,16 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Watermark:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("pdf_wateermark_command"))
     async def pdf_watermark_button(client, callback_query):
-      keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="wattermark_command")]])
-      caption = ("<b>⋅ This Feature is Not Working Yet ⋅</b>")
-      await callback_query.message.edit_text(
-    caption,
-    reply_markup=keyboard
-      )
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+        keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="wattermark_command")]])
+        caption = ("<b>⋅ This Feature is Not Working Yet ⋅</b>")
+        await callback_query.message.edit_text(
+            caption,
+            reply_markup=keyboard
+        )
+
     @bot.on_callback_query(filters.regex("quality_command"))
     async def handle_quality(client, callback_query):
         user_id = callback_query.from_user.id
@@ -291,7 +290,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Video Quality:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("topic_command"))
     async def video_watermark(client, callback_query):
         user_id = callback_query.from_user.id
@@ -309,7 +308,7 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to set Topic in Caption:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
+
     @bot.on_callback_query(filters.regex("resset_command"))
     async def credit(client, callback_query):
         user_id = callback_query.from_user.id
@@ -322,7 +321,7 @@ def register_settings_handlers(bot):
                 globals.endfilename = '/d'
                 globals.thumb = '/d'
                 globals.CR = f"{CREDIT}"
-                globals.cwtoken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjQyMzg3OTEsImNvbiI6eyJpc0FkbWluIjpmYWxzZSwiYXVzZXIiOiJVMFZ6TkdGU2NuQlZjR3h5TkZwV09FYzBURGxOZHowOSIsImlkIjoiZEUxbmNuZFBNblJqVEROVmFWTlFWbXhRTkhoS2R6MDkiLCJmaXJzdF9uYW1lIjoiYVcxV05ITjVSemR6Vm10ak1WUlBSRkF5ZVNzM1VUMDkiLCJlbWFpbCI6Ik5Ga3hNVWhxUXpRNFJ6VlhiR0ppWTJoUk0wMVdNR0pVTlU5clJXSkRWbXRMTTBSU2FHRnhURTFTUlQwPSIsInBob25lIjoiVUhVMFZrOWFTbmQ1ZVcwd1pqUTViRzVSYVc5aGR6MDkiLCJhdmF0YXIiOiJLM1ZzY1M4elMwcDBRbmxrYms4M1JEbHZla05pVVQwOSIsInJlZmVycmFsX2NvZGUiOiJOalZFYzBkM1IyNTBSM3B3VUZWbVRtbHFRVXAwVVQwOSIsImRldmljZV90eXBlIjoiYW5kcm9pZCIsImRldmljZV92ZXJzaW9uIjoiUShBbmRyb2lkIDEwLjApIiwiZGV2aWNlX21vZGVsIjoiU2Ftc3VuZyBTTS1TOTE4QiIsInJlbW90ZV9hZGRyIjoiNTQuMjI2LjI1NS4xNjMsIDU0LjIyNi4yNTUuMTYzIn19.snDdd-PbaoC42OUhn5SJaEGxq0VzfdzO49WTmYgTx8ra_Lz66GySZykpd2SxIZCnrKR6-R10F5sUSrKATv1CDk9ruj_ltCjEkcRq8mAqAytDcEBp72-W0Z7DtGi8LdnY7Vd9Kpaf499P-y3-godolS_7ixClcYOnWxe2nSVD5C9c5HkyisrHTvf6NFAuQC_FD3TzByldbPVKK0ag1UnHRavX8MtttjshnRhv5gJs5DQWj4Ir_dkMcJ4JaVZO3z8j0OxVLjnmuaRBujT-1pavsr1CCzjTbAcBvdjUfvzEhObWfA1-Vl5Y4bUgRHhl1U-0hne4-5fF0aouyu71Y6W0eg'
+                globals.cwtoken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjQyMzg3OTEsImNvbiI6eyJpc0FkbWluIjpmYWxzZSwiYXVzZXIiOiJVMFZ6TkdGU2NuQlZjR3h5TkZwV09FYzBURGxOZHowOSIsImlkIjoiZEUxbmNuZFBNblJqVEROVmFWTlFWbXhRTkhoS2R6MDkiLCJmaXJzdF9uYW1lIjoiYVcxV05ITjVSemR6Vm10ak1WUlBSRkF5ZVNzM1VUMDkiLCJlbWFpbCI6Ik5Ga3hNVWhxUXpRNFJ6VlhiR0ppWTJoUk0wMVdNR0pVTlU5clJXSkRWbXRMTTBSU2FHRnhURTFTUlQwPSIsInBob25lIjoiVUhVMFZrOWFTbmQ1ZVcwd1pqUTViRzVSYVc5aGR6MDkiLCJhdmF0YXIiOiJLM1ZzY1M4elMwcDBRbmxrYms4M1JEbHZla05pVVQwOSIsInJlZmVycmFsX2NvZGUiOiJOalZFYzBkM1IyNTBSM3B3VUZWbVRtbHFRVXAwVVQwOSIsImRldmljZV90eXBlIjoiYW5kcm9pZCIsImRldmljZV92ZXJzaW9uIjoiUShBbmRyb2lkIDEwLjApIiwiZGV2aWNlX21vZGVsIjoiU2Ftc3VuZyBTTS1TOTE4QiIsInJlbW90ZV9hZGRyIjoiNTQuMjI2LjI1UuMTYzIn19.snDdd-PbaoC42OUhn5SJaEGxq0VzfdzO49WTmYgTx8ra_Lz66GySZykpd2SxIZCnrKR6-R10F5sUSrKATv1CDk9ruj_ltCjEkcRq8mAqAytDcEBp72-W0Z7DtGi8LdnY7Vd9Kpaf499P-y3-godolS_7ixClcYOnWxe2nSVD5C9c5HkyisrHTvf6NFAuQC_FD3TzByldbPVKK0ag1UnHRavX8MtttjshnRhv5gJs5DQWj4Ir_dkMcJ4JaVZO3z8j0OxVLjnmuaRBujT-1pavsr1CCzjTbAcBvdjUfvzEhObWfA1-Vl5Y4bUgRHhl1U-0hne4-5fF0aouyu71Y6W0eg'
                 globals.cptoken = "cptoken"
                 globals.pwtoken = "pwtoken"
                 globals.vidwatermark = '/d'
@@ -337,5 +336,3 @@ def register_settings_handlers(bot):
             await editable.edit(f"<b>❌ Failed to Change Settings:</b>\n<blockquote expandable>{str(e)}</blockquote>", reply_markup=keyboard)
         finally:
             await input_msg.delete()
-
-# .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
