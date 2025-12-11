@@ -21,13 +21,10 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("🔄 Reset", callback_data="resset_command")],
             [InlineKeyboardButton("🔙 Back to Main Menu", callback_data="back_to_main_menu")]
         ])
-        await callback_query.message.edit_media(
-        InputMediaPhoto(
-          media="https://envs.sh/GVI.jpg",
-          caption=caption
-        ),
-        reply_markup=keyboard
-        )
+        await callback_query.message.edit_text(
+    caption,
+    reply_markup=keyboard
+     )
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
     @bot.on_callback_query(filters.regex("thummbnail_command"))
     async def cmd(client, callback_query):
@@ -38,12 +35,9 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("🎥 Video", callback_data="viideo_thumbnail_command"), InlineKeyboardButton("📑 PDF", callback_data="pddf_thumbnail_command")],
             [InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]
         ])
-        await callback_query.message.edit_media(
-        InputMediaPhoto(
-          media="https://tinypic.host/images/2025/07/14/file_00000000fc2461fbbdd6bc500cecbff8_conversation_id6874702c-9760-800e-b0bf-8e0bcf8a3833message_id964012ce-7ef5-4ad4-88e0-1c41ed240c03-1-1.jpg",
-          caption=caption
-        ),
-        reply_markup=keyboard
+        await callback_query.message.edit_text(
+    caption,
+    reply_markup=keyboard
         )
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
     @bot.on_callback_query(filters.regex("wattermark_command"))
@@ -55,12 +49,9 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("🎥 Video", callback_data="video_wateermark_command"), InlineKeyboardButton("📑 PDF", callback_data="pdf_wateermark_command")],
             [InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]
         ])
-        await callback_query.message.edit_media(
-        InputMediaPhoto(
-          media="https://tinypic.host/images/2025/07/14/file_00000000fc2461fbbdd6bc500cecbff8_conversation_id6874702c-9760-800e-b0bf-8e0bcf8a3833message_id964012ce-7ef5-4ad4-88e0-1c41ed240c03-1-1.jpg",
-          caption=caption
-        ),
-        reply_markup=keyboard
+        await callback_query.message.edit_text(
+    caption,
+    reply_markup=keyboard
         )
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
     @bot.on_callback_query(filters.regex("set_token_command"))
@@ -73,12 +64,9 @@ def register_settings_handlers(bot):
             [InlineKeyboardButton("Physics Wallah", callback_data="pw_token_command"), InlineKeyboardButton("Carrerwill", callback_data="cw_token_command")],
             [InlineKeyboardButton("🔙 Back to Settings", callback_data="setttings")]
         ])
-        await callback_query.message.edit_media(
-        InputMediaPhoto(
-          media="https://tinypic.host/images/2025/07/14/file_00000000fc2461fbbdd6bc500cecbff8_conversation_id6874702c-9760-800e-b0bf-8e0bcf8a3833message_id964012ce-7ef5-4ad4-88e0-1c41ed240c03-1-1.jpg",
-          caption=caption
-        ),
-        reply_markup=keyboard
+        await callback_query.message.edit_text(
+    caption,
+    reply_markup=keyboard
         )
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
     @bot.on_callback_query(filters.regex("caption_style_command"))
@@ -161,12 +149,9 @@ def register_settings_handlers(bot):
     async def pdf_thumbnail_button(client, callback_query):
       keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="thummbnail_command")]])
       caption = ("<b>⋅ This Feature is Not Working Yet ⋅</b>")
-      await callback_query.message.edit_media(
-        InputMediaPhoto(
-            media="https://envs.sh/GVI.jpg",
-            caption=caption
-        ),
-        reply_markup=keyboard
+     await callback_query.message.edit_text(
+    caption,
+    reply_markup=keyboard
       )
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
     @bot.on_callback_query(filters.regex("add_credit_command"))
@@ -255,12 +240,9 @@ def register_settings_handlers(bot):
     async def pdf_watermark_button(client, callback_query):
       keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🔙 Back to Settings", callback_data="wattermark_command")]])
       caption = ("<b>⋅ This Feature is Not Working Yet ⋅</b>")
-      await callback_query.message.edit_media(
-        InputMediaPhoto(
-            media="https://envs.sh/GVI.jpg",
-            caption=caption
-        ),
-        reply_markup=keyboard
+      await callback_query.message.edit_text(
+    caption,
+    reply_markup=keyboard
       )
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.......,.....,
     @bot.on_callback_query(filters.regex("quality_command"))
